@@ -1,0 +1,73 @@
+.place__grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.place__text {
+  max-width: 38ch;
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+  color: color-mix(in srgb, var(--ink) 82%, transparent);
+}
+
+.place__hours {
+  font-weight: 600;
+  color: var(--resin);
+}
+
+.place__panel {
+  min-height: 16rem;
+  background:
+    linear-gradient(145deg, rgba(62, 86, 68, 0.22), transparent 50%),
+    linear-gradient(20deg, #c9d2c6, #e7ebe4 55%, #d8dfd4);
+  border: 1px solid color-mix(in srgb, var(--mist) 70%, var(--ink));
+  display: grid;
+  align-content: space-between;
+  padding: 1.25rem;
+}
+
+.place__window {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.place__window span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--resin);
+  background: color-mix(in srgb, var(--sheet) 75%, transparent);
+  padding: 0.35rem 0.55rem;
+}
+
+.place__caption {
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--ink) 62%, transparent);
+  max-width: 28ch;
+}
+
+.place__grid .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.85s var(--ease),
+    transform 0.85s var(--ease);
+}
+
+.place__grid.is-visible .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (min-width: 880px) {
+  .place__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+
+  .place__panel {
+    min-height: 22rem;
+  }
+}

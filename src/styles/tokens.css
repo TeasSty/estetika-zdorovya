@@ -1,0 +1,27 @@
+:root {
+  --plaster: #e4e8e1;
+  --sheet: #eef2ec;
+  --ink: #242a27;
+  --resin: #3e5644;
+  --annotation: #6a4452;
+  --wood: #8f6a45;
+  --mist: #cbd3c8;
+  --white: #f7f9f5;
+
+  --font-display: "Literata", "Times New Roman", serif;
+  --font-ui: "Onest", "Segoe UI", sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 0.85rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 3.5rem;
+  --space-2xl: 6rem;
+
+  --pad-x: clamp(1.25rem, 4vw, 3.5rem);
+  --max: 72rem;
+  --narrow: 42rem;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.9s;
+}

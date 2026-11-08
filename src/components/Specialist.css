@@ -1,0 +1,80 @@
+.specialist__grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.specialist__role {
+  font-size: 0.95rem;
+  color: var(--resin);
+  font-weight: 500;
+  margin: -0.5rem 0 1.25rem;
+  max-width: 36ch;
+}
+
+.specialist__story {
+  max-width: 40ch;
+  font-size: 1.05rem;
+  color: color-mix(in srgb, var(--ink) 82%, transparent);
+}
+
+.specialist__sheet {
+  background: var(--sheet);
+  border-left: 3px solid var(--annotation);
+  padding: 1.5rem 1.4rem 1.6rem;
+  max-width: 28rem;
+}
+
+.specialist__sheet-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+}
+
+.specialist__sheet ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.specialist__sheet li {
+  padding-left: 1rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.specialist__sheet li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.35rem;
+  height: 0.35rem;
+  background: var(--resin);
+}
+
+.specialist__note {
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  color: color-mix(in srgb, var(--ink) 58%, transparent);
+  border-top: 1px dashed var(--mist);
+  padding-top: 0.9rem;
+}
+
+.specialist__grid .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.specialist__grid.is-visible .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (min-width: 900px) {
+  .specialist__grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: end;
+  }
+}

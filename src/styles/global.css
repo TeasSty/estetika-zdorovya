@@ -1,0 +1,188 @@
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--plaster);
+  line-height: 1.55;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  outline: 1px solid rgba(36, 42, 39, 0.08);
+  outline-offset: -1px;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+button,
+.btn {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+.brand-type {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--resin);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.section {
+  padding: var(--space-2xl) var(--pad-x);
+}
+
+.section__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.section__eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--annotation);
+  margin: 0 0 var(--space-sm);
+}
+
+.section__title {
+  font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+  margin: 0 0 var(--space-md);
+  max-width: 18ch;
+}
+
+.section__lead {
+  max-width: 38ch;
+  color: color-mix(in srgb, var(--ink) 78%, transparent);
+  margin-bottom: var(--space-xl);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.85rem;
+  padding: 0.7rem 1.35rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition:
+    background 0.25s var(--ease),
+    color 0.25s var(--ease),
+    border-color 0.25s var(--ease),
+    transform 0.25s var(--ease);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background: var(--resin);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background: color-mix(in srgb, var(--resin) 88%, black);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: color-mix(in srgb, var(--ink) 28%, transparent);
+  color: var(--ink);
+}
+
+.btn--ghost:hover {
+  border-color: var(--ink);
+  background: color-mix(in srgb, var(--sheet) 70%, transparent);
+}
+
+.btn--wood {
+  background: var(--wood);
+  color: var(--white);
+}
+
+.btn--wood:hover {
+  background: color-mix(in srgb, var(--wood) 88%, black);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .protocol-step,
+  .chart-mark,
+  .hero__chart {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
