@@ -17,11 +17,26 @@
   color: color-mix(in srgb, var(--ink) 82%, transparent);
 }
 
+.specialist__photo {
+  margin: 0;
+  max-width: 28rem;
+  justify-self: end;
+}
+
+.specialist__photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+}
+
 .specialist__sheet {
   background: var(--sheet);
   border-left: 3px solid var(--annotation);
   padding: 1.5rem 1.4rem 1.6rem;
   max-width: 28rem;
+  margin-top: var(--space-lg);
 }
 
 .specialist__sheet-title {
@@ -74,7 +89,8 @@
 
 @media (min-width: 900px) {
   .specialist__grid {
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: end;
+    grid-template-columns: 1fr 0.95fr;
+    align-items: start;
+    gap: clamp(2rem, 5vw, 4rem);
   }
 }

@@ -1,10 +1,14 @@
+import { photos } from "../data/photos";
 import { site } from "../data/site";
 import "./Hero.css";
 
 export function Hero() {
   return (
     <section className="hero" id="top" aria-labelledby="hero-brand">
-      <div className="hero__atmosphere" aria-hidden="true" />
+      <div className="hero__media" aria-hidden="true">
+        <img src={photos.hero} alt="" />
+        <div className="hero__veil" />
+      </div>
       <div className="hero__inner">
         <div className="hero__copy">
           <p className="hero__place">Саранск · кабинет у сквера и леса</p>

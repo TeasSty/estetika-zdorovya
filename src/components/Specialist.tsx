@@ -1,3 +1,4 @@
+import { photos } from "../data/photos";
 import { education, site } from "../data/site";
 import { useInView } from "../hooks/useInView";
 import "./Specialist.css";
@@ -18,16 +19,25 @@ export function Specialist() {
             индивидуальные программы восстановления. Кабинет создан как место
             без «жёлтых стен поликлиники»: уютно, ясно, рядом со сквером и лесом.
           </p>
+
+          <aside className="specialist__sheet">
+            <p className="specialist__sheet-title">Опора в образовании</p>
+            <ul>
+              {education.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </aside>
         </div>
 
-        <aside className="specialist__sheet reveal" style={{ transitionDelay: "120ms" }}>
-          <p className="specialist__sheet-title">Опора в образовании</p>
-          <ul>
-            {education.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </aside>
+        <figure className="specialist__photo reveal" style={{ transitionDelay: "120ms" }}>
+          <img
+            src={photos.specialist}
+            alt="Любовь Глухова в кабинете у массажного стола"
+            width={960}
+            height={1280}
+          />
+        </figure>
       </div>
     </section>
   );

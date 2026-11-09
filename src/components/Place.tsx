@@ -1,3 +1,4 @@
+import { photos } from "../data/photos";
 import { site } from "../data/site";
 import { useInView } from "../hooks/useInView";
 import "./Place.css";
@@ -19,14 +20,19 @@ export function Place() {
           <p className="place__hours">{site.hours}</p>
         </div>
 
-        <div className="place__panel reveal" style={{ transitionDelay: "120ms" }} aria-hidden="true">
-          <div className="place__window">
-            <span>дневной свет</span>
-            <span>хвоя у окна</span>
+        <div className="place__gallery reveal" style={{ transitionDelay: "120ms" }}>
+          <figure className="place__main">
+            <img
+              src={photos.specialistAlt}
+              alt="Любовь Глухова в белом халате в кабинете"
+              width={960}
+              height={1280}
+            />
+          </figure>
+          <div className="place__strip">
+            <img src={photos.sessionNeck} alt="Работа с шеей и плечевым поясом" width={720} height={960} />
+            <img src={photos.sessionFace} alt="Массаж лица в кабинете" width={960} height={1280} />
           </div>
-          <p className="place__caption">
-            Дневной свет, тишина кабинета и зелень рядом — часть восстановления.
-          </p>
         </div>
       </div>
     </section>
