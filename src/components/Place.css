@@ -17,7 +17,10 @@
 
 .place__gallery {
   display: grid;
+  width: min(100%, 34rem);
+  min-width: 0;
   gap: 0.75rem;
+  justify-self: end;
 }
 
 .place__main {
@@ -26,7 +29,8 @@
 
 .place__main img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  display: block;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center top;
 }
@@ -39,7 +43,8 @@
 
 .place__strip img {
   width: 100%;
-  aspect-ratio: 1;
+  display: block;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
 }
 
@@ -58,7 +63,11 @@
 
 @media (min-width: 880px) {
   .place__grid {
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: end;
+  }
+
+  .place__gallery {
+    max-width: 34rem;
   }
 }
